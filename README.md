@@ -84,6 +84,8 @@ These quantised GGUFv2 files are compatible with llama.cpp from August 27th onwa
 
 They are also compatible with many third party UIs and libraries - please see the list at the top of this README.
 
+Sequence length note: The model will work at sequence lengths of 4096, or lower. GGUF does not yet have support for the new sliding window sequence length mode, so longer sequence lengths are not supported.
+
 ## Explanation of quantisation methods
 <details>
   <summary>Click to see details</summary>
@@ -186,12 +188,12 @@ Windows Command Line users: You can set the environment variable by running `set
 Make sure you are using `llama.cpp` from commit [d0cee0d](https://github.com/ggerganov/llama.cpp/commit/d0cee0d36d5be95a0d9088b674dbb27354107221) or later.
 
 ```shell
-./main -ngl 32 -m mistral-7b-instruct-v0.1.Q4_K_M.gguf --color -c 2048 --temp 0.7 --repeat_penalty 1.1 -n -1 -p "<s>[INST]{prompt} [/INST]"
+./main -ngl 32 -m mistral-7b-instruct-v0.1.Q4_K_M.gguf --color -c 4096 --temp 0.7 --repeat_penalty 1.1 -n -1 -p "<s>[INST]{prompt} [/INST]"
 ```
 
 Change `-ngl 32` to the number of layers to offload to GPU. Remove it if you don't have GPU acceleration.
 
-Change `-c 2048` to the desired sequence length. For extended sequence models - eg 8K, 16K, 32K - the necessary RoPE scaling parameters are read from the GGUF file and set by llama.cpp automatically.
+Sequence length can be 4096 or lower. Mistral's sliding window sequence length is not yet supported in llama.cpp, so do not use sequence lengths longer than 4096.
 
 If you want to have a chat-style conversation, replace the `-p <PROMPT>` argument with `-i -ins`
 
