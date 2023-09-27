@@ -70,8 +70,7 @@ Here is an incomplate list of clients and libraries that are known to support GG
 ## Prompt template: Mistral
 
 ```
-<s>[INST]{prompt} [/INST]
-
+<s>[INST] {prompt} [/INST]
 ```
 
 <!-- prompt-template end -->
