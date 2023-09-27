@@ -209,6 +209,8 @@ You can use GGUF models from Python using the [llama-cpp-python](https://github.
 
 ### How to load this model in Python code, using ctransformers
 
+I have not tested ctransformers with Mistral models. It may work, but will require that you set the `model_type` to `llama` for now, until ctransformers updates with specific support.
+
 #### First install the package
 
 Run one of the following commands, according to your system:
