@@ -62,6 +62,7 @@ Here is an incomplate list of clients and libraries that are known to support GG
 <!-- repositories-available start -->
 ## Repositories available
 
+* [AWQ model(s) for GPU inference.](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-AWQ)
 * [2, 3, 4, 5, 6 and 8-bit GGUF models for CPU+GPU inference](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF)
 * [Mistral AI's original unquantised fp16 model in pytorch format, for GPU inference and for further conversions](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1)
 <!-- repositories-available end -->
