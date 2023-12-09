@@ -305,9 +305,9 @@ device = "cuda" # the device to load the model onto
 model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-Instruct-v0.1")
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.1")
 
-text = "<s>[INST] What is your favourite condiment? [/INST]"
-"Well, I'm quite partial to a good squeeze of fresh lemon juice. It adds just the right amount of zesty flavour to whatever I'm cooking up in the kitchen!</s> "
-"[INST] Do you have mayonnaise recipes? [/INST]"
+text = """<s>[INST] What is your favourite condiment? [/INST]
+Well, I'm quite partial to a good squeeze of fresh lemon juice. It adds just the right amount of zesty flavour to whatever I'm cooking up in the kitchen!</s>
+[INST] Do you have mayonnaise recipes? [/INST]"""
 
 encodeds = tokenizer(text, return_tensors="pt", add_special_tokens=False)
 
